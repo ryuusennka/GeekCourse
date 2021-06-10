@@ -1,0 +1,10 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ryuusennka/GeekCourse.git",
+  "license": "MIT",
+  "dependencies": {
+    "css": "^3.0.0"
+  }
+}
