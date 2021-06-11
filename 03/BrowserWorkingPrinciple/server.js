@@ -2,8 +2,8 @@
  * @Author: ryuusennka
  * @Date: 2021-05-05 20:05:02
  * @LastEditors: ryuusennka
- * @LastEditTime: 2021-06-10 15:21:40
- * @FilePath: /projects/02/BrowserWorkingPrinciple/server.js
+ * @LastEditTime: 2021-06-11 15:52:02
+ * @FilePath: /03/BrowserWorkingPrinciple/server.js
  * @Description:
  */
 
@@ -32,25 +32,32 @@ http
         // response.end(string);
         response.end(
           `<html maaa=a>
-          <head>
-              <style>
-          body div #myid{
-              width: 100px;
-              background-color: #ff5000;
-          }
-          body div img{
-              width: 30px;
-              background-color: #ff1111;
-          }
-              </style>
-          </head>
-          <body>
-              <div>
-                  <img id="myid"/>
-                  <img />
-              </div>
-          </body>
-          </html>`
+<head>
+    <style>
+#container {
+  width:500px;
+  height:300px;
+  display:flex;
+  background-color:rgb(255,255,255);
+}
+#container #myid {
+  width:200px;
+  height:100px;
+  background-color:rgb(255,0,0);
+}
+#container .c1 {
+  flex:1;
+  background-color:rgb(0,255,0);
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+      <div id="myid"/>
+      <div class="c1" />
+    </div>
+</body>
+</html>`
         );
         // response.end(''); // 返回长度为0的chunk
       });

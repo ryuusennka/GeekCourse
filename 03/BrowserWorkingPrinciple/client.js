@@ -2,14 +2,15 @@
  * @Author: ryuusennka
  * @Date: 2021-04-17 17:03:37
  * @LastEditors: ryuusennka
- * @LastEditTime: 2021-05-21 23:18:34
- * @FilePath: /projects/02/BrowserWorkingPrinciple/client.js
+ * @LastEditTime: 2021-06-11 16:04:19
+ * @FilePath: /03/BrowserWorkingPrinciple/client.js
  * @Description:
  */
 
 const net = require('net');
 const fs = require('fs');
 const parser = require('./parser');
+const render = require('./render');
 const PORT = 8080; // PORT 跟 server.js 配置的一样
 
 class Request {
@@ -292,5 +293,9 @@ class TrunkedBodyParser {
   let response = await request.send();
   console.log(response);
   const dom = parser.parserHTML(response.body);
+  let viewport = images(800, 600);
+  render(viewport, dom);
+  // render(viewport, dom.children[0].children[3].children[1].children[3]);
+  viewport.save('viewport.jpg');
   console.log(dom);
 })();
